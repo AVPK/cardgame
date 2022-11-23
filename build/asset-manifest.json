@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.62415315.css",
+    "main.js": "/static/js/main.cfca746a.js",
+    "static/js/787.9c804d05.chunk.js": "/static/js/787.9c804d05.chunk.js",
+    "static/media/TheCardGame-Logo.png": "/static/media/TheCardGame-Logo.efc8d659b0f4d0e892e1.png",
+    "index.html": "/index.html",
+    "main.62415315.css.map": "/static/css/main.62415315.css.map",
+    "main.cfca746a.js.map": "/static/js/main.cfca746a.js.map",
+    "787.9c804d05.chunk.js.map": "/static/js/787.9c804d05.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.62415315.css",
+    "static/js/main.cfca746a.js"
+  ]
+}
