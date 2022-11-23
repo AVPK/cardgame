@@ -2,8 +2,8 @@
   --Mainyellow: #f6a61d;
   --Mainwhite: #f1ffff;
   --Secondblue: #2cb1c0;
-  --Thirdred: #ed1b24;
-  --Thirdgreen: #6dc078;
+  --Secondorange: #F08A5D;
+  --Thirdred: #B83B5E;
 }
 a{
   color:var(--Mainwhite);
@@ -17,10 +17,12 @@ p {
   margin:1px;
 }
 a:hover{
-  color:var(--Secondblue);
+  color:var(--Thirdred);
   text-decoration:none;
   font-weight:bold;
 }
+
+/* HEADER */
 .App-logo {
   height: 10vmin;
   pointer-events: none;
@@ -37,45 +39,131 @@ a:hover{
   pointer-events: none;
 }
 
+/* BODY APP */
 .MainSection{
   margin:10px;
- 
-  
 }
 .viewSection{
   margin:10px;
   padding-bottom: 50px;
   margin-bottom: 50px;
-  
+}
+
+.sectionHeading{
+  color: var(--Mainwhite);
+  font-size: 5vmin;
 }
 
 .details{
-  background-color:#2cb1c041;
+  background:linear-gradient(to right top, #F08A5D, #f47f4c);
   height:40vmin;
   box-shadow:4px 4px #00000011;
   border-radius: 8px;
+  padding-bottom: 20px;
 }
 .sort{
-  background-color:#2cb1c041;
+  background:linear-gradient(to right top, #F08A5D, #f47f4c);
   height:40vmin;
   box-shadow:4px 4px #00000011;
   border-radius: 8px;
+  padding-bottom: 20px;
 }
 .list{
-  background-color:#2cb1c041;
+  background:linear-gradient(to right top, #F08A5D, #f47f4c);
   height:auto;
   box-shadow:4px 4px #00000011;
   border-radius: 8px;
-  padding:10px;
+  padding:20px;
 }
 
 .sectionHeading{
   padding:10px;
 }
 
+/* ListView Component */
 .listItem{
-  background-color:#2cb1c0;
+  background-color:var(--Thirdred);
   padding: 15px;
+  border-radius: 8px;
+  box-shadow:4px 4px #00000011;
+}
+.listItem:hover{
+  background-color:var(--Mainyellow);
+  cursor: pointer;
+}
+
+ .selected {
+  background-color:var(--Mainyellow);
+  border: 2px solid var(--Thirdred);
+}
+  .text {
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 30vmin;
+ }
+
+/* Details Component */
+.detailsBox{
+  padding-left: 40px;
+
+}
+.detailstext{
+ display: flex;
+ align-items: center;
+  font-size: 2.2vmin;
+}
+
+
+/* Sort Component */
+.spanTwoButton{
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.submitDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sortButton{
+padding: 2px 5px 2px 5px;
+height: 9vmin;
+width: 37%;
+border-radius: 8px;
+border:none;
+font-size: 2vmin;
+background-color: var(--Mainyellow);
+border: 3px solid #B83B5E;
+font-weight: 600;
+}
+
+.sortButton:hover{
+  background-color:#B83B5E;
+  border: 3px solid var(--Mainyellow);
+  cursor: pointer;
+}
+
+
+.submitButton{
+  padding: 2px 5px 2px 5px;
+  height: 8vmin;
+  width: 80%;
+  border-radius: 8px;
+  border:none;
+  font-size: 2vmin;
+  background-color: var(--Mainyellow);
+  border: 3px solid #B83B5E;
+  font-weight: 600;
+}
+
+.submitButton:hover{
+  background-color:#B83B5E;
+  border: 3px solid var(--Mainyellow);
+  cursor: pointer;
 }
 
 .footer{

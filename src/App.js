@@ -4,34 +4,58 @@ import {Grid} from "@mui/material"
 import Details from "./components/Details"
 import ListView from "./components/ListView"
 import Sort from "./components/Sort"
-import React ,  { useState } from 'react';
+import React ,  { useState , useEffect} from 'react';
 import CardData from "./data/CardData.json";
-// import sortJson from 'sort-json'
+const backEndURL='https://URL.com'
+const headers={"Content-Type": "application/json",'Access-Control-Allow-Origin':"*", 'Access-Control-Allow-Methods':"GET, POST, PUT",'Access-Control-Allow-Headers':'Origin, Content-Type, X-Auth-Token', 'Authorization':`Bearer {token}`}
 
-
-// const check= {
-//   "_id":"1",
-//   "RealName":"Brianna Forbes",
-//   "PlayerName":"Dreamlurk The Unstoppable",
-//   "Asset":"Foghammer Lead"
-// }
 
 function App() {
 
   const [selectedData, setSelectedData] = useState();
-  const [sortedData, setSortedData] = useState(CardData);
+  const [sortedData, setSortedData] = useState();
+
+  const getData = () => {
+    const abortConstant = new AbortController();
+
+    fetch(backEndURL + "/getData", { signal: abortConstant.signal, headers: headers })
+      .then((res) => {
+        if (!res.ok) {
+          throw Error("Unable to fetch data for that resource");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setSortedData(data)
+      })
+      .catch((err) => {
+        if (err.name === "AbortError") {
+        } else {
+          console.log(err.message);
+        }
+
+      });
+      setSortedData(CardData)
+    return () => abortConstant.abort();
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   const  sort= (type)=>{
     let json=[...sortedData];
-    console.log(json)
     
     if(type==='asc'){
    json = json.sort((a, b) => {
    if(a.RealName < b.RealName)
 {
   return -1;
-}       
-});
+}
+else
+return null;       
+}
+);
   setSortedData(json)
 }
   else if(type==='desc')
@@ -40,14 +64,16 @@ function App() {
 if(a.RealName > b.RealName)
 {
   return -1;
-}       
+} 
+else
+return null;       
   });
   setSortedData(json)
 }
 
-  console.log(json)
-    // setSortedData(json)
   }
+
+  
 
   
   

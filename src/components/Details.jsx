@@ -6,13 +6,19 @@ function Details(props) {
     <div className="details">
     <h2 className='sectionHeading'>Details</h2>
     {props.data &&
-<div>
-    <h3>Real Name: {props.data.RealName} </h3>
-    <p></p>
-    <h3>Player Name: {props.data.PlayerName} </h3>
-    <p></p>
-    <h3>Asset: {props.data.Asset}</h3>
-    <p></p>
+<div className='detailsBox'>
+    <div className='detailstext'>
+    <h3>Real Name: &nbsp; </h3>
+    <p>{props.data.RealName}</p>
+    </div>
+    <div className='detailstext'>
+    <h3>Player Name:  &nbsp;</h3>
+    <p>{props.data.PlayerName} </p>
+    </div>
+    <div className='detailstext'>
+    <h3>Asset:  &nbsp;</h3>
+    <p> {props.data.Asset}</p>
+    </div>
 </div>}
     </div>
   )
